@@ -23,6 +23,10 @@ PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
+ifneq ($(CONFIG_USE_UCLIBCXX),)
+  TARGET_CXX=g++-uc
+endif
+
 define Package/pping
   SECTION:=net
   CATEGORY:=Network

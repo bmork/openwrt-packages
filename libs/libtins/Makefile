@@ -25,11 +25,15 @@ PKG_INSTALL:=1
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
+ifneq ($(CONFIG_USE_UCLIBCXX),)
+  TARGET_CXX=g++-uc
+endif
+
 define Package/libtins
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=Network packet sniffing and crafting library
-  DEPENDS:=+libstdcpp +libopenssl +libpcap
+  DEPENDS:=$(CXX_DEPENDS) +libopenssl +libpcap
   URL:=http://libtins.github.io/
 endef
 
