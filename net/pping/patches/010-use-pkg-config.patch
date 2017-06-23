@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index cef5fdda438f..231a8b056590 100644
+index cef5fdda438f..3a94da3ebc1a 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -1,8 +1,7 @@
@@ -9,7 +9,7 @@ index cef5fdda438f..231a8b056590 100644
 -CPPFLAGS += -I$(LIBTINS)/include
 -LDFLAGS += -L$(LIBTINS)/lib -ltins -lpcap
 +CPPFLAGS += $(shell pkg-config libtins --cflags)
-+LDFLAGS += -lstdc++ $(shell pkg-config libtins --libs) -lpcap
++LDFLAGS += $(shell pkg-config libtins --libs) -lpcap
  CXXFLAGS += -std=c++14 -g -O3 -Wall
  
  pping:  pping.cpp
