@@ -1,5 +1,5 @@
 diff --git a/pping.cpp b/pping.cpp
-index adc172aceb8e..5bcfb0250c37 100644
+index adc172aceb8e..ed418783a264 100644
 --- a/pping.cpp
 +++ b/pping.cpp
 @@ -55,6 +55,19 @@
@@ -9,7 +9,7 @@ index adc172aceb8e..5bcfb0250c37 100644
 +#include <string>
 +#include <sstream>
 +
-+namespace patch
++namespace std
 +{
 +    template < typename T > std::string to_string( const T& n )
 +    {
