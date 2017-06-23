@@ -1,0 +1,20 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f57162b86981..19d2d5acedea 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -262,6 +262,7 @@ ADD_CUSTOM_TARGET(uninstall
+ # ******************
+ ADD_SUBDIRECTORY(include)
+ ADD_SUBDIRECTORY(src)
++IF(LIBTINS_BUILD_SUBDIRS)
+ IF(LIBTINS_ENABLE_PCAP)
+     ADD_SUBDIRECTORY(examples)
+ ELSE()
+@@ -293,6 +294,7 @@ IF(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/googletest/CMakeLists.txt")
+ ELSE()
+     MESSAGE(STATUS "googletest git submodule is absent. Run `git submodule init && git submodule update` to get it")
+ ENDIF()
++ENDIF()
+ 
+ # **********************************
+ # CMake project configuration export
